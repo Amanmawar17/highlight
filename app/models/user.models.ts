@@ -1,6 +1,21 @@
+import { verify } from 'crypto';
 import mongoose, {Schema} from 'mongoose';
 
-const userSchema = new Schema({
+export interface User extends Document{
+    fullName: string;
+    password: string;
+    email:string;
+    profilePic:string;
+    phone:number;
+    isUsingCMS:boolean;
+    isAdmin:boolean;
+    verifyCode:string;
+    verifyCodeExpiry:Date;
+    isVerified:boolean;
+}
+
+
+const UserSchema = new Schema({
     fullName:{
         type:String,
         required:true,
@@ -29,13 +44,26 @@ const userSchema = new Schema({
     },
     isUsingCMS:{
         type:Boolean,
-
+        default: false
     },
     isAdmin:{
         type:Boolean,
+        default: false
+    },
+    verifyCode:{
+        type:String,
+        required:true
+    },
+    verifyCodeExpiry:{
+        type:Date,
+        required:true
+    },
+    isVerified:{
+        type:Boolean,
+        default: false
     }
 
 
 })
 
-export const User = mongoose.model("User", userSchema);
+export const UserModel = (mongoose.models.User as mongoose.Model<User>) || mongoose.model<User>("User", UserSchema)  

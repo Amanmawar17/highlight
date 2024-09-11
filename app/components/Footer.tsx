@@ -9,7 +9,7 @@ import Twitter from "@/public/icons/twitter.svg"
 import Reddit from "@/public/icons/reddit.svg"
 export default function Footer() {
   return (
-    <footer className="p-6 sm:py-20 sm:px-10">
+    <footer className="p-6 sm:py-20 sm:px-10 border-t-2 border-solid">
       <div className="max-w-screen-2xl m-auto">
         <div className="grid place-content-start justify-items-start md:justify-items-center grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-flow-col gap-y-10 gap-x-20">
           <div className="grid place-content-start gap-y-5">

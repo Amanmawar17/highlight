@@ -43,7 +43,7 @@ export default function Navbar() {
     <nav className="backdrop-blur-lg backdrop-filter bg-opacity-30 sticky top-0 z-50 border-b-2 border-solid">
         <div className="flex justify-between items-center max-w-screen-2xl m-auto py-4 px-6 md:px-10">
             <div className="flex justify-start items-center gap-x-6">
-                <Image src={logo} alt="img" width={40} height={40} className="rounded-lg"/>
+                <Image src={logo} alt="img" width={100} height={100} className="w-10 h-10 rounded-sm"/>
                 <ul className="hidden lg:flex gap-x-6 font-raleway text-lg font-medium">
                     <li>Showcase</li>
                     <li>Docs</li>

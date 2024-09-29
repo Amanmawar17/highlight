@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Logo"
                 height={60}
                 width={60}
-                className="rounded-md"
+                className="rounded-sm"
               />
             </Link>
             <p>A platform your blogging hobbies to new hieght of monetization.</p>

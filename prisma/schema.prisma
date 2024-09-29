@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model User {
+  id               String    @id @default(auto()) @map("_id") @db.ObjectId // Auto-increment ID
+  fullName         String // Full name of the user
+  password         String // Hashed password
+  email            String    @unique // Unique email, lowercased in your application logic
+  profilePic       String? // Nullable profile picture
+  phone            BigInt // Phone number, use BigInt for long numbers
+  isUsingCMS       Boolean   @default(false) // Boolean flag for CMS usage
+  isAdmin          Boolean   @default(false) // Boolean flag for admin status
+  verifyCode       String // Code used for verification
+  verifyCodeExpiry DateTime // Expiration time for verification code
+  isVerified       Boolean   @default(false) // Boolean flag for verification status
+  articles         Article[]
+}
+
+model Article {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId // Auto-increment ID
+  title       String // Video title
+  content     String // Video content
+  authorId    String   @db.ObjectId // Author reference (relation to User)
+  author      User     @relation(fields: [authorId], references: [id])
+  featuredImg String? // Optional featured image
+  images      String[] // List of image URLs (array of strings)
+}
+

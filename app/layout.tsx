@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
-import { Nunito, Raleway,  } from "next/font/google";
+import { Nunito, Raleway, } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from 'sonner'
+import AuthProvider from "./context/AuthProvider";
 const nunito = Nunito({ subsets: ["latin"] });
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -73,11 +74,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode; 
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} ${raleway.className}`}>{children}</body>
+      <body className={`${nunito.className} ${raleway.className}`}>
+        <AuthProvider>
+          <Toaster richColors position="top-right" />{children}</AuthProvider></body>
     </html>
   );
 }

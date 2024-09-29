@@ -10,16 +10,13 @@ export default function StatsAnimation() {
     const container = useRef(null);
     const { contextSafe } = useGSAP({ scope: container });
     contextSafe(() => {
-        const context = gsap.context(() => {
-            // Ensure correct selector targeting with '.box'
             gsap.from(".box", {
                 textContent: 0,
-                duration: 4,
+                duration: 2,
                 ease: 'power1.inOut',
                 snap: { textContent: 1 },
                 stagger: 1,
             });
-        }, );
     }, );
 
     return (

@@ -7,7 +7,7 @@ interface MenuProps {
   closeSidebar: () => void;
 }
 
-export default function Sidebar({ closeSidebar }: MenuProps) {
+export default function SideMenu({ closeSidebar }: MenuProps) {
   return (
     <div
       className="fixed top-20 z-50 bg-white w-full h-screen shadow-lg transform transition-transform delay-150 duration-500 ease-in-out translate-y-0"

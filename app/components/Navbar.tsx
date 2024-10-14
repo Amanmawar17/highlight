@@ -4,11 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import DarkMode from "./DarkMode";
 import logo from "@/public/icons/logo.png"
-import Github from "@/public/icons/github.svg"
 import { useEffect, useState } from "react";
-import Menu from "@/public/icons/menu.svg"
 import SideMenu from "./Menu"
-import X from"@/public/icons/x.svg"
+import {Plus, Github, Menu} from 'lucide-react'
 
 
 export default function Navbar() {
@@ -53,15 +51,15 @@ export default function Navbar() {
             </div>
             <div className="hidden lg:flex justify-end items-center gap-x-6 font-nunito font-medium">
               <DarkMode/>
-              <Link href="login" className="inline-flex items-center border-2 border-solid hover:shadow-md px-3 py-1 text-base rounded">
-                <Github className="w-5 h-5 mr-3" /> Github
+              <Link href="login" className="flex gap-x-3 items-center border-2 border-solid hover:shadow-md px-3 py-1 text-base rounded">
+                <Github className="w-5 h-5" /> Github
               </Link>
               <Link href="login" className="border-2 border-solid hover:shadow-md px-3 py-1 text-base rounded">
                 Login
               </Link>
             </div>
             <button onClick={handleclick} className="lg:hidden transition-all delay-200 duration-700 ease-out">
-                {isOpen ? <X className="w-4 h-4"/> : <Menu className='w-7 h-7'/>}
+                {isOpen ? <Plus className="w-4 h-4 rotate-45"/> : <Menu className='w-7 h-7'/>}
               </button>
             {isOpen && (
           <div

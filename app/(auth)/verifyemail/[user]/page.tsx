@@ -33,7 +33,6 @@ export default function VerifyAccount() {
         fullName: params.user,
         code: data.code,
       });
-      console.log(response)
       toast.success('User Verified Succesfully!')
       router.push(`/login`);
     } catch (error) {

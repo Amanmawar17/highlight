@@ -80,7 +80,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${nunito.className} ${raleway.className}`}>
         <AuthProvider>
-          <Toaster richColors position="top-right" />{children}</AuthProvider></body>
+          <Toaster richColors position="top-right" closeButton />{children}</AuthProvider></body>
     </html>
   );
 }

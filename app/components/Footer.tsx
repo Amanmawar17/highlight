@@ -4,9 +4,7 @@ import Image from "next/image"
 import DarkMode from "./DarkMode";
 
 import logo from "@/public/icons/logo.png"
-import LinkedIn from "@/public/icons/linkedin.svg"
-import Twitter from "@/public/icons/twitter.svg"
-import Reddit from "@/public/icons/reddit.svg"
+import { Twitter, Linkedin  } from 'lucide-react'
 export default function Footer() {
   return (
     <footer className="p-6 sm:py-20 sm:px-10 border-t-2 border-solid">
@@ -27,11 +25,6 @@ export default function Footer() {
             <ul className="flex items-center gap-x-3 sm:gap-x-6">
               <DarkMode />
               <li className="border-2 border-solid rounded-md p-[6px]">
-                <Link href="/" className="">
-                  <Reddit className="w-5 h-5" />
-                </Link>
-              </li>
-              <li className="border-2 border-solid rounded-md p-[6px]">
                 <Link
                   href="/"
                 >
@@ -42,7 +35,7 @@ export default function Footer() {
                 <Link
                   href="/"
                 >
-                  <LinkedIn className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" />
                 </Link>
               </li>
             </ul>

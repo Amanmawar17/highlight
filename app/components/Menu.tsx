@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Github from "@/public/icons/github.svg"
+import { Github } from 'lucide-react'
 import DarkMode from "./DarkMode";
 
 

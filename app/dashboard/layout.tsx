@@ -19,7 +19,9 @@ export default async function DashboardLayout({
       <Header />
       <div className="flex">
         <Sidebar />
+        <div className="w-[calc(100vw-230px)]">
         {children}
+        </div>
       </div>
     </div>
   );
